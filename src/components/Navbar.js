@@ -15,7 +15,6 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <NavLink to="/" className={styles.brand}>SmartInfra <span>V1.0</span></NavLink>
             <ul className={styles.links_list}>
-                <li><NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink></li>
                 {!user && (
                     <>
                         <li><NavLink to="/login" className={({ isActive }) => (isActive ? styles.active : "")}>Entrar</NavLink></li>
@@ -23,7 +22,10 @@ const Navbar = () => {
                     </>
                 )}
                 {user && (
-                    <li><NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink></li>
+                    <>
+                        <li><NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>Home</NavLink></li>
+                        <li><NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.active : "")}>Dashboard</NavLink></li>
+                    </>
                 )}
                 {user && (
                     <li>
