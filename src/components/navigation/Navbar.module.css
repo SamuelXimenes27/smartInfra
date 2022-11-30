@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    border-radius: 2px;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 2em;
+    background-color: #FFFF;
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+
+}
+
+.greetings::first-line {
+    font-weight: bold;
+}
+
+.greetings {
+    white-space: pre-wrap;
+}
+
+.date {
+    color: #2148C0;
+    font-size: 12px;
+}
+
+.rightContent {
+    display: flex;
+    margin: 0 0 15px 0;
+}

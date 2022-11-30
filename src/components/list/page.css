@@ -1,0 +1,60 @@
+.pagination {
+    list-style: none;
+    display: flex;
+  }
+  ul.pagination li {
+    cursor: pointer;
+  }
+  .activeClass {
+    background-color: rgb(168, 164, 164);
+  }
+  .pageClassName {
+    color: black;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgba(157, 154, 154, 0.34);
+    text-decoration: none;
+  }
+  .pageLink {
+    color: rgb(66, 64, 64);
+    text-decoration: none;
+  }
+  .pageLink:hover {
+    color: Blue;
+  }
+  .previousClass {
+    color: black;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgba(157, 154, 154, 0.34);
+  }
+  .previousLinkClass {
+    color: rgb(66, 64, 64);
+    text-decoration: none;
+  }
+  .previousLinkClass:hover {
+    color: Blue;
+  }
+  .nextClass {
+    color: black;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgba(157, 154, 154, 0.34);
+  }
+  .nextLinkClass {
+    color: rgb(66, 64, 64);
+    text-decoration: none;
+  }
+  .nextLinkClass:hover {
+    color: Blue;
+  }
+  .breakClass {
+    color: black;
+    padding: 6px 12px 6px 12px;
+    border: 1px solid rgba(157, 154, 154, 0.34);
+  }
+  .breakLinkClass {
+    color: rgb(66, 64, 64);
+    text-decoration: none;
+  }
+  .breakLinkClass:hover {
+    color: Blue;
+  }
+  

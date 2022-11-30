@@ -1,5 +1,10 @@
+body {
+    background-color: #2148C0;
+}
+
 .login {
     text-align: center;
+    background-color: #2148C0;
 }
 
 .login p {
