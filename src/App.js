@@ -11,7 +11,6 @@ import { useAuthentication } from './hooks/userAuthentication';
 import { AuthProvider } from "./context/authContext";
 
 // pages
-import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Dashboard from "./pages/Dashboard/Dashboard"
@@ -28,17 +27,21 @@ function App() {
 
   const loadindUser = user === undefined;
 
+
   useEffect(() => {
 
     onAuthStateChanged(auth, (user) => {
       setUser(user)
     })
 
+
   }, [auth]);
 
   if (loadindUser) {
     return <p>Carregando...</p>
   }
+
+
 
   return (
     <div className="App">
@@ -47,19 +50,15 @@ function App() {
           <BrowserRouter basename={process.env.PUBLIC_URL}>
             {user ? <header><Navbar /></header> : null}
             {user ? <nav><SidebarNavigation /></nav> : null}
-            <main>
-              <div>
-                <Routes>
-                  <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
-                  <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />}></Route>
-                  <Route path="/" element={user ? <Home /> : <Navigate to="/login" />}></Route>
-                  <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />}></Route>
-                  <Route path="/serviceorders" element={user ? <ServiceOrders /> : <Navigate to="/login" />}></Route>
-                  <Route path="/commissions" element={user ? <Commissions /> : <Navigate to="/login" />}></Route>
-                  <Route path="/configurations" element={user ? <Configurations /> : <Navigate to="/login" />}></Route>
-                </Routes>
-              </div>
-            </main>
+            <Routes>
+              <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />}></Route>
+              <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />}></Route>
+              <Route path="/" element={user ? <Dashboard /> : <Navigate to="/login" />}></Route>
+              <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />}></Route>
+              <Route path="/serviceorders" element={user ? <ServiceOrders /> : <Navigate to="/login" />}></Route>
+              <Route path="/commissions" element={user ? <Commissions /> : <Navigate to="/login" />}></Route>
+              <Route path="/configurations" element={user ? <Configurations /> : <Navigate to="/login" />}></Route>
+            </Routes>
           </BrowserRouter>
         </AuthProvider>
       </section>

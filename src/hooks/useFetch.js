@@ -39,6 +39,17 @@ export const useFetch = (url) => {
 
             setMethod("DELETE");
             setItemId(data);
+        } else if (method === "PUT") {
+            setConfig({
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+
+            setMethod("PUT");
+            setItemId(data);
         }
     };
 
@@ -93,6 +104,16 @@ export const useFetch = (url) => {
                 const deleteUrl = `${url}/${itemId}`;
 
                 const res = await fetch(deleteUrl, config);
+
+                const json = await res.json();
+
+                setCallFetch(json);
+            } else if (method === "PUT") {
+                setLoading(true);
+
+                const updateUrl = `${url}/${itemId}`;
+
+                const res = await fetch(updateUrl, config);
 
                 const json = await res.json();
 

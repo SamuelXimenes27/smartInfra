@@ -5,7 +5,7 @@ const TextfieldWithTitle = (props) => {
     return (
         <div>
             <Typography sx={{ ml: 0.5, fontSize: 14 }}>{props.title}</Typography>
-            <TextField sx={{ width: 140 }} />
+            <TextField sx={{ width: 140 }} disabled={props.disabled} />
         </div>
     )
 }

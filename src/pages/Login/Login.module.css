@@ -1,6 +1,10 @@
 body {
-    background-color: #2148C0;
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
 }
+
 
 .login {
     text-align: center;

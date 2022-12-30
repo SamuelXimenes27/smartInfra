@@ -77,7 +77,7 @@ export default function SimpleModal() {
                         sx={{
                             position: "fixed",
                             bottom: 15,
-                            ml: 135,
+                            ml: 125,
                         }}
                     >
                         <CustomButton text='Confirmar' defaultStyle={true} />

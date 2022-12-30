@@ -47,7 +47,7 @@ const Login = () => {
 
 
     return (
-        <div className={styles.login}>
+        <Box sx={{ backgroundColor: '#2148C0', overflow: 'hidden' }} width={'100%'} height={2000}>
             <Stack
                 component="form"
                 sx={{
@@ -113,7 +113,7 @@ const Login = () => {
                 {loading && <Button sx={{ height: '6ch', "&:disabled": { backgroundColor: '#393E46', color: 'white' } }} variant="contained" disabled>Aguarde...</Button>}
                 {error && <p className='error'>{error}</p>}
             </Stack>
-        </div>
+        </Box>
     )
 }
 

@@ -1,6 +1,6 @@
 import { async } from '@firebase/util';
 
-import { db } from "../firebase/config";
+import { db } from "../firebase/utils/config";
 
 import {
     getAuth,

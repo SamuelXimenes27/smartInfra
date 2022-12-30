@@ -1,26 +1,22 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import { useFetch } from '../../hooks/useFetch';
-import { createTheme, TableBody, Pagination, TableCell, TableHead, TableRow, IconButton, TableContainer, Table } from '@mui/material';
+import { createTheme, TableBody, TableCell, TableHead, TableRow, TableContainer, Table } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/system';
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import { useMemo } from 'react';
 import data from '../../data/db.json'
 import Paginations from './test/Pagination';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const url = "http://localhost:3000/serviceorders";
 
-let PageSize = 5;
+let PageSize = 4;
 
 const theme = createTheme({
     palette: {
@@ -43,16 +39,10 @@ export default function Content() {
 
     }, [currentPage]);
 
-    const [page, setPage] = React.useState(1);
-    const handleChange = (event, value) => {
-        setPage(value);
-    };
-
-
 
     return (
         <ThemeProvider theme={theme}>
-            <Paper sx={{ maxWidth: 936, margin: 'auto', overflow: 'hidden' }}>
+            <Paper sx={{ maxWidth: 1200, margin: 'auto', overflow: 'hidden', ml: 30 }}>
                 <AppBar
                     position="static"
                     color="default"
@@ -83,22 +73,55 @@ export default function Content() {
                         <TableHead sx={{ minWidth: 650 }} >
                             <TableRow align="center">
                                 <TableCell align="center">Ordem de Serviço</TableCell>
-                                <TableCell align="center">Tempo de Serviço</TableCell>
-                                <TableCell align="center">Data do Serviço</TableCell>
+                                <TableCell align="center">Início do Serviço</TableCell>
+                                <TableCell align="center">Finalização do Serviço</TableCell>
+                                <TableCell align="center">Técnicos</TableCell>
+                                <TableCell align="center">Serviço Realizado</TableCell>
+                                <TableCell align="center">Quantidade</TableCell>
                                 <TableCell align="center">SLA</TableCell>
                                 <TableCell align="center">Acionamento</TableCell>
                                 <TableCell align="center">Comissão</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody >
-                            {loading && <p>Carregando dados...</p>}
-                            {error && <p>{error}</p>}
+                            {/* {loading && <p>Carregando dados...</p>} */}
+                            {/* {error && <p>{error}</p>} */}
                             {currentTableData && currentTableData.map(item => {
                                 return (
-                                    <TableRow key={item.id}>
+                                    <TableRow>
                                         <TableCell align="center">{item.id}</TableCell>
                                         <TableCell align="center">{item.start_service}</TableCell>
                                         <TableCell align="center">{item.end_service}</TableCell>
+                                        <TableCell align="center">
+                                            {
+                                                <>
+                                                    <p>{item.tech_1}</p>
+                                                    <p>{item.tech_2}</p>
+                                                    <p>{item.tech_3}</p>
+                                                    <p>{item.tech_4}</p>
+                                                </>
+                                            }
+                                        </TableCell>
+                                        <TableCell align="center">
+                                            {
+                                                <>
+                                                    <p>{item.type_service_tech_1}</p>
+                                                    <p>{item.type_service_tech_2}</p>
+                                                    <p>{item.type_service_tech_3}</p>
+                                                    <p>{item.type_service_tech_4}</p>
+                                                </>
+                                            }
+                                        </TableCell>
+                                        <TableCell align="center">
+                                            {
+                                                <>
+                                                    <p>{item.qty_service_tech_1}</p>
+                                                    <p>{item.qty_service_tech_2}</p>
+                                                    <p>{item.qty_service_tech_3}</p>
+                                                    <p>{item.qty_service_tech_4}</p>
+                                                </>
+                                            }
+                                        </TableCell>
                                         <TableCell align="center">{item.sla === true ? 'ATIVO' : 'DESATIVADO'}</TableCell>
                                         <TableCell align="center">{item.triggered === true ? 'FDS' : 'SEMANA'}</TableCell>
                                         <TableCell align="center">{item.comission}</TableCell>

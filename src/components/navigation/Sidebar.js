@@ -41,9 +41,7 @@ const SidebarNavigation = (props) => {
       <Toolbar>
         <Box
           component={NavLink}
-          activeClassName={({ isActive }) =>
-            isActive ? styles.active : undefined
-          }
+          // className={(navData) => (navData.isActive ? "active_style" : 'none')}
           to={'/'}
           sx={{
             width: 40,
@@ -73,9 +71,7 @@ const SidebarNavigation = (props) => {
             key={text}
             disablePadding
             component={NavLink}
-            activeClassName={({ isActive }) =>
-              isActive ? styles.active : undefined
-            }
+            // className={(navData) => (navData.isActive ? "active_style" : 'none')}
             sx={{ color: '#8C8C8C' }}
             to={index === 0 ? "/dashboard" : null || index === 1 ? '/serviceorders' : null || index === 2 ? "/commissions" : null || index === 3 ? "/configurations" : null}
           >

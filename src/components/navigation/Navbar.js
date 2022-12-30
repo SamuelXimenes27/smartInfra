@@ -8,6 +8,7 @@ import { useAuthValue } from '../../context/authContext';
 import styles from './Navbar.module.css'
 import { Box } from '@mui/system';
 import PersonIcon from '@mui/icons-material/Person';
+import { Typography } from '@mui/material';
 
 const Navbar = () => {
     const { user } = useAuthValue();
@@ -33,8 +34,8 @@ const Navbar = () => {
                     <span style={{ color: '#2148C0', fontSize: 14 }}>{date}</span>
                 </p>
             </div>
-            <div className={styles.rightContent}>
-                <p>{nameUser}</p>
+            <Box sx={{ display: 'flex' }}>
+                <Typography paddingTop={1.5}>{nameUser}</Typography>
                 <Box
                     sx={{
                         width: 40,
@@ -50,8 +51,7 @@ const Navbar = () => {
                         margin: "7px",
                     }} />
                 </Box>
-
-            </div>
+            </Box>
         </nav>
     )
 }

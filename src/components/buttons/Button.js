@@ -10,6 +10,7 @@ const CustomButton = (props) => {
 
     return (
         <Button
+            type='submit'
             size="small"
             variant="contained"
             sx={defaultStyle ? styles : props.styles}

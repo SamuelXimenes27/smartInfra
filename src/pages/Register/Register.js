@@ -33,7 +33,7 @@ const Register = () => {
             password
         }
 
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             setError("As senhas precisam ser iguais!");
             return;
         }

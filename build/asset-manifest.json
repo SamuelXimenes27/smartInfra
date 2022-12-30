@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/smartInfra/static/css/main.073c9b0a.css",
-    "main.js": "/smartInfra/static/js/main.f44c116d.js",
+    "main.css": "/smartInfra/static/css/main.bf73cb06.css",
+    "main.js": "/smartInfra/static/js/main.99e4e830.js",
     "static/js/787.5a43e0aa.chunk.js": "/smartInfra/static/js/787.5a43e0aa.chunk.js",
-    "static/media/logo.svg": "/smartInfra/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/logo_smart.svg": "/smartInfra/static/media/logo_smart.43f0632e3a6e056bcf91f0c85c81f910.svg",
+    "static/media/gear.gif": "/smartInfra/static/media/gear.f60c625c2bc5e4aff442.gif",
     "index.html": "/smartInfra/index.html",
-    "main.073c9b0a.css.map": "/smartInfra/static/css/main.073c9b0a.css.map",
-    "main.f44c116d.js.map": "/smartInfra/static/js/main.f44c116d.js.map",
+    "main.bf73cb06.css.map": "/smartInfra/static/css/main.bf73cb06.css.map",
+    "main.99e4e830.js.map": "/smartInfra/static/js/main.99e4e830.js.map",
     "787.5a43e0aa.chunk.js.map": "/smartInfra/static/js/787.5a43e0aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.f44c116d.js"
+    "static/css/main.bf73cb06.css",
+    "static/js/main.99e4e830.js"
   ]
 }
